@@ -1,33 +1,31 @@
-/* ===== VARIÁVEIS CSS - TEMA HELLO KITTY ===== */
 :root {
-    /* Cores Primárias - Hello Kitty (Rosa, Branco, Preto) */
-    --primary-color: #FF69B4; /* Rosa Choque */
-    --primary-dark: #FF1493; /* Rosa Escuro */
-    --primary-light: #FFB6C1; /* Rosa Claro */
-    --secondary-color: #FFFFFF; /* Branco */
-    --tertiary-color: #F8F8FF; /* Branco Sujo */
-    --accent-color: #FFD700; /* Dourado para detalhes */
+    /* Cores Primárias - Hello Kitty & Kuromi (Rosa, Preto, Branco) */
+    --primary-color: #FF69B4; /* Rosa Choque - Hello Kitty */
+    --primary-dark: #FF1493; /* Rosa Escuro - Kuromi (Detalhes) */
+    --primary-light: #FFC0CB; /* Rosa Claro - Fundo */
+    --secondary-color: #000000; /* Preto - Contraste e Kuromi */
+    --tertiary-color: #FFFFFF; /* Branco - Fundo e Legibilidade */
+    --accent-color: #8A2BE2; /* Azul Violeta - Toque Kuromi */
     
     /* Cores de Texto */
-    --text-color: #36454F; /* Cinza Carvão */
-    --text-light: #696969; /* Cinza Suave */
-    --text-white: #FFFFFF;
+    --text-color: var(--secondary-color); /* Preto para alta legibilidade */
+    --text-light: #36454F; /* Cinza Carvão */
+    --text-white: var(--tertiary-color);
     
     /* Cores de Fundo */
-    --bg-color: #F0F8FF; /* Azul Alice (Muito claro, quase branco) */
-    --bg-light: #FFF0F5; /* Lavanda Blush */
-    --bg-lighter: #FFFFFF;
-    --white: #FFFFFF;
+    --bg-color: var(--primary-light); /* Rosa Claro para o fundo principal */
+    --bg-light: var(--tertiary-color); /* Branco para blocos de conteúdo */
+    --bg-lighter: #F0F0F0; /* Cinza muito claro */
+    --white: var(--tertiary-color);
     
     /* Efeitos */
-    --border-radius: 25px; /* Mais arredondado */
-    --box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
-    --glow-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-slow: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --border-radius: 30px; /* Mais arredondado e cute */
+    --box-shadow: 0 10px 40px rgba(255, 105, 180, 0.4); /* Sombra rosa forte */
+    --glow-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+    --transition: all 0.5s ease-in-out;
     
     /* Fontes */
-    --font-cute: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais "fofa" */
+    --font-cute: 'Comic Sans MS', cursive, sans-serif; /* Mantendo a fonte cute */
 }
 
 /* ===== RESET E ESTILOS GLOBAIS ===== */
@@ -46,717 +44,178 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    background-image: url('assets/background_hk.jpg'); /* Fundo Hello Kitty */
+    background-image: url('assets/hk_kuromi/dark_pink_bg.jpg'); /* Novo fundo com tema */
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Fundo fixo para melhor visualização */
+    background-position: center;
     min-height: 100vh;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 5px solid var(--primary-light);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente para legibilidade */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed var(--primary-dark); /* Borda cute */
+}
+
+header h1 {
+    font-size: 3em;
+    color: var(--primary-dark);
+    text-shadow: 2px 2px 0 var(--primary-light);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: var(--text-light);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--primary-dark);
-    text-decoration: none;
-    cursor: pointer;
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--glow-shadow);
     transition: var(--transition);
 }
 
 .logo:hover {
-    transform: rotate(-5deg) scale(1.05);
+    transform: scale(1.05) rotate(5deg);
 }
 
-.logo-icon {
-    font-size: 2.5rem;
-    animation: heartbeat 1.5s infinite;
-    color: var(--primary-color);
-}
-
-.logo-text {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
-}
-
-.nav-links {
+/* Seções de Botões */
+.buttons-section {
     display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 700;
-    transition: var(--transition);
-    position: relative;
-    font-size: 1.1rem;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-.nav-link::after {
-    content: '🎀';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.nav-link:hover::after {
-    opacity: 1;
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-}
-
-.nav-toggle span {
-    width: 25px;
-    height: 3px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: var(--transition);
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-    background: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente para ver a imagem */
-    color: var(--text-color);
-    padding: 120px 0;
-    text-align: center;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 10px dashed var(--primary-light);
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-    position: relative;
-    z-index: 2;
-}
-
-.hero-text {
-    text-align: center;
-    animation: slideInDown 1s ease;
-}
-
-.hero-title {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 0 var(--primary-light);
-}
-
-.title-gradient {
-    color: var(--primary-color);
-}
-
-.title-anime {
-    color: var(--primary-dark);
-    display: block;
-    font-size: 4.5rem;
-    text-shadow: 4px 4px 0 var(--primary-light), 6px 6px 0 var(--primary-color);
-}
-
-.hero-subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-    color: var(--text-color);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
+    margin-top: 30px;
 }
 
-.hero-visual {
-    position: relative;
-    height: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.floating-card {
-    position: relative;
-    background: var(--secondary-color);
-    border: 5px solid var(--primary-color);
-    border-radius: 50%;
-    padding: 1rem;
+.button-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
-    animation: float 3s ease-in-out infinite;
-    margin: 0 20px;
-}
-
-.card-1 {
-    animation-delay: 0s;
-}
-
-.card-2 {
-    animation-delay: 1.5s;
-}
-
-.card-icon {
-    font-size: 3rem;
-    color: var(--primary-dark);
-}
-
-.card-text {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--text-color);
-}
-
-/* ===== BUTTONS ===== */
-.btn {
-    padding: 14px 32px;
-    border-radius: 50px; /* Botões pílula */
     text-decoration: none;
-    font-weight: 700;
-    transition: var(--transition);
-    border: 3px solid transparent;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-icon {
-    font-size: 1.2rem;
-}
-
-.btn-primary {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--text-white);
-    border-color: var(--primary-dark);
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
-}
-
-.btn-primary:hover {
-    transform: scale(1.05) rotate(2deg);
-    background: var(--primary-dark);
-    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.7);
-}
-
-.btn-secondary {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
-}
-
-.btn-secondary:hover {
-    transform: scale(1.05) rotate(-2deg);
-    background: var(--primary-light);
-    color: var(--primary-dark);
-    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.4);
-}
-
-.btn-invite {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--text-white);
-    border-color: var(--primary-dark);
-    width: 100%;
-    margin-top: 1.5rem;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
-}
-
-.btn-invite:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.8);
-}
-
-/* ===== SECTION TITLES ===== */
-.section-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3.5rem;
-    color: var(--primary-dark);
-    position: relative;
-    padding-bottom: 1.5rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.title-highlight {
-    color: var(--primary-color);
-    text-shadow: 2px 2px 0 var(--secondary-color);
-}
-
-.section-title::after {
-    content: '💖';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
-}
-
-/* ===== BOTS SECTION ===== */
-.bots-section {
-    padding: 100px 0;
-    background: rgba(255, 255, 255, 0.9);
-    position: relative;
-}
-
-.bots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2.5rem;
-}
-
-.bot-card {
-    background: var(--tertiary-color);
+    padding: 20px;
     border-radius: var(--border-radius);
-    padding: 2.5rem;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition-slow);
-    border: 5px solid var(--primary-light);
-    position: relative;
-    overflow: hidden;
-}
-
-.bot-card:hover {
-    transform: translateY(-10px) rotate(-1deg);
-    border-color: var(--primary-color);
-    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
-}
-
-.bot-header {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    width: 250px;
+    min-height: 150px;
     text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px dashed var(--primary-light);
+    border: 3px solid var(--primary-dark);
 }
 
-.bot-icon-wrapper {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    background: var(--primary-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+.button-link:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: var(--glow-shadow);
 }
 
-.bot-icon {
-    font-size: 3.5rem;
-    color: var(--primary-dark);
+.button-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 
-.bot-name {
-    font-size: 2.2rem;
-    color: var(--primary-dark);
-    margin-bottom: 0.5rem;
-    font-weight: 900;
+.button-link h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: var(--text-white);
     text-shadow: 1px 1px 0 var(--secondary-color);
 }
 
-.bot-status {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 700;
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--primary-light);
+    color: var(--text-light);
+    font-size: 0.9em;
 }
 
-.bot-description {
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.bot-commands h4,
-.bot-features h4 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.bot-commands li,
-.bot-features li {
-    padding: 0.7rem 0;
-    padding-left: 2rem;
-    position: relative;
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.bot-commands li:hover,
-.bot-features li:hover {
-    color: var(--primary-dark);
-    transform: translateX(5px);
-}
-
-.bot-commands li::before,
-.bot-features li::before {
-    content: '⭐';
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-}
-
-code {
-    background: var(--primary-light);
-    padding: 3px 8px;
-    border-radius: 10px;
-    font-family: var(--font-cute);
-    color: var(--primary-dark);
-    font-size: 1rem;
-    border: 2px solid var(--primary-color);
-}
-
-.feature-badge {
-    color: var(--primary-color);
-    margin-right: 8px;
-    font-weight: bold;
-}
-
-/* ===== FEATURES SECTION ===== */
-.features-section {
-    padding: 100px 0;
-    background: var(--bg-light);
-}
-
-.feature-card {
-    background: var(--secondary-color);
-    padding: 2.5rem;
+/* Estilos para a seção de comandos (se existir) */
+.commands-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--bg-light);
     border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition-slow);
-    border: 3px solid var(--primary-light);
+    border: 2px solid var(--primary-light);
 }
 
-.feature-card:hover {
-    transform: translateY(-8px) rotate(1deg);
-    border-color: var(--primary-color);
-    box-shadow: 0 12px 35px rgba(255, 105, 180, 0.3);
-}
-
-.feature-icon-wrapper {
-    width: 70px;
-    height: 70px;
-    background: var(--primary-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    border: 3px solid var(--primary-color);
-}
-
-.feature-icon {
-    font-size: 2.2rem;
+.commands-section h2 {
     color: var(--primary-dark);
+    margin-bottom: 15px;
 }
 
-.feature-card h3 {
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 900;
+.commands-list {
+    list-style: none;
+    padding: 0;
 }
 
-.feature-card p {
-    color: var(--text-color);
-    line-height: 1.7;
-    font-size: 1.05rem;
-}
-
-/* ===== SHORTCUT SECTION ===== */
-.shortcut-section {
-    padding: 100px 0;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.shortcut-card {
-    background: var(--primary-light);
-    color: var(--text-color);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition-slow);
-    border: 5px solid var(--primary-color);
-}
-
-.shortcut-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(255, 105, 180, 0.5);
-}
-
-.shortcut-card h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--primary-dark);
-}
-
-.shortcut-code {
-    background: var(--secondary-color);
-    padding: 12px 18px;
+.commands-list li {
+    background-color: var(--bg-lighter);
+    margin-bottom: 10px;
+    padding: 10px;
     border-radius: 15px;
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 1.3rem;
-    margin: 1rem 0;
-    border: 3px solid var(--primary-color);
+    border-left: 5px solid var(--primary-color);
+    text-align: left;
+}
+
+.commands-list li strong {
     color: var(--primary-dark);
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--text-white);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-top: 10px dashed var(--primary-light);
-}
-
-.contact-link {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--primary-color);
-    padding: 1.2rem 2.5rem;
-    border-radius: 50px;
+/* Estilo para links */
+a {
+    color: var(--primary-dark);
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
     transition: var(--transition);
-    border: 3px solid var(--primary-light);
-    font-weight: 800;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.contact-link:hover {
-    background: var(--secondary-color);
-    color: var(--primary-dark);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
-/* ===== FOOTER ===== */
-.footer {
-    background: var(--primary-light);
-    color: var(--primary-dark);
-    text-align: center;
-    padding: 3rem 0;
-    border-top: 5px solid var(--primary-color);
-}
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
 
-.footer-content p {
-    margin: 0.8rem 0;
-    opacity: 0.95;
-    font-weight: 700;
-}
+    header h1 {
+        font-size: 2em;
+    }
 
-/* ===== ANIMAÇÕES ===== */
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-        color: var(--primary-dark);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Adicionando as animações que foram perdidas */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideOutDown {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
+    .buttons-section {
         flex-direction: column;
-        padding: 2rem;
-        gap: 1rem;
-        z-index: 999;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .title-anime {
-        font-size: 3.5rem;
-    }
-
-    .bots-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .shortcuts-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .contact-link {
+    .button-link {
         width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .title-anime {
-        font-size: 3rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
     }
 }

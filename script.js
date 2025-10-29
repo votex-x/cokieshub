@@ -48,10 +48,12 @@ const shortener = new URLShortener();
 
 // ===== INICIALIZAR ATALHOS =====
 function initializeShortcuts() {
-    if (!shortener.getShortcut('modi')) {
+    // Garante que os atalhos existam no shortener, mas sem incrementar cliques.
+    // O getShortcut() incrementa, o que é indesejado na inicialização.
+    if (!shortener.getAllShortcuts()['modi']) {
         shortener.createShortcut('modi', BOT_LINKS.modi);
     }
-    if (!shortener.getShortcut('musicat')) {
+    if (!shortener.getAllShortcuts()['musicat']) {
         shortener.createShortcut('musicat', BOT_LINKS.musicat);
     }
 }
@@ -147,8 +149,34 @@ function checkURLCommand() {
     const params = new URLSearchParams(window.location.search);
     const cmd = params.get('cmd');
     
+    // Se o parâmetro "cmd" for encontrado, remove-o da URL para evitar loops de redirecionamento
     if (cmd) {
-        commandHandler.execute(cmd);
+        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+    }
+    
+    if (cmd) {
+        // Executar o comando e, se for um comando de redirecionamento,
+        // o commandHandler.execute() já irá chamar redirectToModi/Musicat.
+        // O problema pode ser que o script não está esperando o comando ser executado.
+        // Vou garantir que o redirecionamento ocorra.
+        // O problema mais provável é que o comando na URL não está sendo executado
+        // se o atalho não existir no localStorage, pois initializeShortcuts() usa getShortcut()
+        // que incrementa o contador e pode não criar o atalho se já existir.
+        
+        // A correção mais simples é garantir que os atalhos sejam inicializados ANTES
+        // de tentar executar o comando da URL.
+        const commandExecuted = commandHandler.execute(`/${cmd}`); // Adicionando a barra para corresponder à chave do handler
+        
+        // Se o comando não for reconhecido, podemos tentar um redirecionamento direto
+        if (!commandExecuted) {
+            // Se o usuário digitou algo como 'modi' sem a barra, tentamos redirecionar
+            if (cmd.toLowerCase() === 'modi') {
+                redirectToModi();
+            } else if (cmd.toLowerCase() === 'musicat') {
+                redirectToMusicat();
+            }
+        }
     }
 }
 
