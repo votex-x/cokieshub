@@ -48,7 +48,6 @@ const shortener = new URLShortener();
 
 // ===== INICIALIZAR ATALHOS =====
 function initializeShortcuts() {
-    // Criar atalhos para os bots se não existirem
     if (!shortener.getShortcut('modi')) {
         shortener.createShortcut('modi', BOT_LINKS.modi);
     }
@@ -247,14 +246,16 @@ function showNotification(message, type = 'info') {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#27ae60' : '#3498db'};
+        background: ${type === 'success' ? 'linear-gradient(135deg, #FF006E 0%, #00D9FF 100%)' : 'linear-gradient(135deg, #8338EC 0%, #00D9FF 100%)'};
         color: white;
         padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         z-index: 10000;
         animation: slideInUp 0.3s ease;
-        font-weight: 500;
+        font-weight: 600;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
     `;
     
     document.body.appendChild(notification);
@@ -290,8 +291,39 @@ function setupAnalytics() {
     document.querySelectorAll('.btn-invite').forEach(btn => {
         btn.addEventListener('click', function() {
             const botName = this.closest('.bot-card').querySelector('.bot-name').textContent;
-            console.log(`Clique em convite: ${botName}`);
+            console.log(`🎯 Clique em convite: ${botName}`);
+            showNotification(`Redirecionando para ${botName}...`, 'info');
         });
+    });
+}
+
+// ===== MENU MOBILE =====
+function setupMobileMenu() {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+}
+
+// ===== EFEITO DE PARALLAX =====
+function setupParallax() {
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundPosition = `0px ${scrolled * 0.5}px`;
+        }
     });
 }
 
@@ -312,7 +344,7 @@ window.cokies = {
 
 // ===== INICIALIZAÇÃO PRINCIPAL =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🍪 Cokies Bots - Inicializando...');
+    console.log('%c🍪 Cokies Bots - Inicializando...', 'color: #FF006E; font-size: 16px; font-weight: bold;');
     
     // Inicializar todos os sistemas
     initializeShortcuts();
@@ -321,10 +353,12 @@ document.addEventListener('DOMContentLoaded', function() {
     setupIntersectionObserver();
     addNotificationStyles();
     setupAnalytics();
+    setupMobileMenu();
+    setupParallax();
     checkURLCommand();
     
-    console.log('✅ Cokies Bots - Pronto!');
-    console.log('💡 Digite "cokies.help()" no console para ver comandos disponíveis');
+    console.log('%c✅ Cokies Bots - Pronto!', 'color: #00D9FF; font-size: 14px; font-weight: bold;');
+    console.log('%c💡 Digite "cokies.help()" no console para ver comandos disponíveis', 'color: #FFBE0B; font-size: 12px;');
 });
 
 // ===== VERIFICAÇÃO DE SUPORTE A STORAGE =====
@@ -341,9 +375,9 @@ function isLocalStorageAvailable() {
 
 // ===== FUNÇÃO DE TESTE =====
 window.testCokies = function() {
-    console.log('🧪 Testando Cokies Bots...');
+    console.log('%c🧪 Testando Cokies Bots...', 'color: #FF006E; font-weight: bold;');
     console.log('📊 Atalhos:', shortener.getAllShortcuts());
-    console.log('✅ Tudo funcionando!');
+    console.log('%c✅ Tudo funcionando!', 'color: #00D9FF; font-weight: bold;');
 };
 
 // ===== EXPORTAR PARA GLOBAL =====
