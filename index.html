@@ -3,302 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cokies Hub - Hello Kitty & Kuromi Edition 💖</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cokies Bots - Documentação Profissional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="assets/hk_kuromi/hk_kuromi_icon_mix.png" alt="Cokies Bots Logo - Hello Kitty & Kuromi" class="logo">
-            <h1>Cokies Hub <span style="color: var(--primary-color);">💖</span></h1>
-            <p>Seus bots favoritos, Modi e Musicat, agora mais fofos do que nunca!</p>
-        </header>
-        
-        <section class="buttons-section">
-            <a href="javascript:void(0)" onclick="redirectToModi()" class="button-link">
-                <img src="assets/hk_kuromi/kuromi_icon.png" alt="Modi Icon" class="button-icon">
-                <h2>Convidar Modi</h2>
-                <p>Bot de Moderação Premium</p>
-            </a>
-            <a href="javascript:void(0)" onclick="redirectToMusicat()" class="button-link">
-                <img src="assets/hk_kuromi/kuromi_cute.jpg" alt="Musicat Icon" class="button-icon" style="border-radius: 50%;">
-                <h2>Convidar Musicat</h2>
-                <p>Bot de Música Avançado</p>
-            </a>
-            <a href="https://discord.gg/cokies" target="_blank" class="button-link">
-                <span class="button-icon" style="font-size: 40px;">💬</span>
-                <h2>Servidor Discord</h2>
-                <p>Comunidade e Suporte</p>
-            </a>
-            <a href="https://github.com/votex-x/cokieshub" target="_blank" class="button-link">
-                <span class="button-icon" style="font-size: 40px;">🔗</span>
-                <h2>GitHub</h2>
-                <p>Código Fonte e Contribuições</p>
-            </a>
-        </section>
-        
-        <section class="commands-section">
-            <h2>Comandos Rápidos</h2>
-            <ul class="commands-list">
-                <li><strong>/modi</strong> - Redireciona para o convite do Modi.</li>
-                <li><strong>/musicat</strong> - Redireciona para o convite do Musicat.</li>
-            </ul>
-        </section>
 
-        <footer>
-            <p>&copy; 2024 Cokies Bots. Feito com muito amor e fofura! 💖</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
-</body>
-    <!-- Navbar -->
-    <nav class="navbar">
+    <header id="main-header">
         <div class="container">
-            <div class="navbar-content">
-                <div class="logo">
-                    <span class="logo-icon">🎀</span>
-                    <span class="logo-text">Cokies Bots</span>
-                </div>
-                <div class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home" class="nav-link">Início</a></li>
-                    <li><a href="#bots" class="nav-link">Bots</a></li>
-                    <li><a href="#features" class="nav-link">Recursos</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
+            <h1 class="logo">Cokies Bots</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="loadContent('home'); return false;">Home</a></li>
+                    <li><a href="#" onclick="loadContent('modi'); return false;">Modi</a></li>
+                    <li><a href="#" onclick="loadContent('musicat'); return false;">Musicat</a></li>
+                    <li><a href="#invite" class="btn-invite">Convidar</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main id="content-area">
+        <!-- Conteúdo dinâmico será carregado aqui -->
+    </main>
+
+    <footer id="main-footer">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="title-gradient">Bem-vindo ao</span>
-                        <span class="title-anime">Cokies Bots</span>
-                    </h1>
-                    <p class="hero-subtitle">Bots Discord Mais Fofos e Poderosos!</p>
-                    <p class="hero-description">Descubra Modi e Musicat - seus novos amigos robóticos com um toque kawaii!</p>
-                    <div class="hero-buttons">
-                        <a href="#bots" class="btn btn-primary">
-                            <span class="btn-icon">🎀</span>
-                            Explorar Bots
-                        </a>
-                        <a href="#features" class="btn btn-secondary">
-                            <span class="btn-icon">💖</span>
-                            Ver Recursos
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-card card-1">
-                        <img src="assets/icon_hk.jpg" alt="Modi Icon" style="width: 80px; height: 80px; border-radius: 50%;">
-                        <div class="card-text">Modi Kawaii</div>
-                    </div>
-                    <div class="floating-card card-2">
-                        <img src="assets/icon_hk.jpg" alt="Musicat Icon" style="width: 80px; height: 80px; border-radius: 50%;">
-                        <div class="card-text">Musicat Fofo</div>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2025 Cokies Bots. Todos os direitos reservados. | Desenvolvido com HTML, CSS e JS Puros.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Bots Section -->
-    <section id="bots" class="bots-section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-highlight">Nossos Bots Fofinhos</span>
-            </h2>
-            <div class="bots-grid">
-                <!-- Modi Bot Card -->
-                <div class="bot-card">
-                    <div class="bot-header">
-                        <div class="bot-icon-wrapper">
-                            <div class="bot-icon">🤖</div>
-                        </div>
-                        <h3 class="bot-name">Modi</h3>
-                        <p class="bot-status">Bot de Moderação</p>
-                    </div>
-                    <div class="bot-description">
-                        <p>Modi é um bot de moderação avançado com filtros inteligentes, auto-reações e gerenciamento premium. Mantém sua comunidade segura com um sorriso!</p>
-                    </div>
-                    <div class="bot-commands">
-                        <h4>📋 Comandos Principais:</h4>
-                        <ul>
-                            <li><code>/setup</code> - Configuração rápida do bot</li>
-                            <li><code>/quickfilter</code> - Configuração rápida de filtros</li>
-                            <li><code>/setfilter</code> - Define filtro de moderação</li>
-                            <li><code>/viewfilters</code> - Visualiza filtros ativos</li>
-                            <li><code>/check_premium</code> - Verifica status Premium</li>
-                        </ul>
-                    </div>
-                    <div class="bot-features">
-                        <h4>✨ Recursos:</h4>
-                        <ul>
-                            <li><span class="feature-badge">✅</span> Filtros de Mídia, Texto e Links</li>
-                            <li><span class="feature-badge">✅</span> Auto-Reações Automáticas</li>
-                            <li><span class="feature-badge">✅</span> Sistema Premium com Limites</li>
-                            <li><span class="feature-badge">✅</span> Gerenciamento de Permissões</li>
-                            <li><span class="feature-badge">✅</span> Estatísticas em Tempo Real</li>
-                        </ul>
-                    </div>
-                    <div class="bot-invite">
-                        <a href="javascript:void(0)" onclick="redirectToModi()" class="btn btn-invite">
-                            <span class="btn-icon">🚀</span>
-                            Convidar Modi
-                        </a>
-                        <p class="invite-shortcut">Ou use: <code>/modi</code></p>
-                    </div>
-                </div>
-
-                <!-- Musicat Bot Card -->
-                <div class="bot-card">
-                    <div class="bot-header">
-                        <div class="bot-icon-wrapper">
-                            <div class="bot-icon">🎵</div>
-                        </div>
-                        <h3 class="bot-name">Musicat</h3>
-                        <p class="bot-status">Bot de Música</p>
-                    </div>
-                    <div class="bot-description">
-                        <p>Musicat é um bot de música avançado com busca inteligente no SoundCloud e download de MP3. Sua trilha sonora perfeita com um toque de fofura!</p>
-                    </div>
-                    <div class="bot-commands">
-                        <h4>📋 Comandos Principais:</h4>
-                        <ul>
-                            <li><code>/play</code> - Busca múltiplas versões de músicas</li>
-                            <li><code>/fast</code> - Download rápido da primeira versão</li>
-                            <li><code>/search</code> - Apenas busca músicas sem baixar</li>
-                            <li><code>/help</code> - Mostra todos os comandos</li>
-                        </ul>
-                    </div>
-                    <div class="bot-features">
-                        <h4>✨ Recursos:</h4>
-                        <ul>
-                            <li><span class="feature-badge">✅</span> Busca Avançada no SoundCloud</li>
-                            <li><span class="feature-badge">✅</span> Múltiplas Estratégias de Busca</li>
-                            <li><span class="feature-badge">✅</span> Download de MP3 até 25MB</li>
-                            <li><span class="feature-badge">✅</span> Detecção de Versões (Slow, Speed, Remix)</li>
-                            <li><span class="feature-badge">✅</span> Ordenação por Popularidade</li>
-                        </ul>
-                    </div>
-                    <div class="bot-invite">
-                        <a href="javascript:void(0)" onclick="redirectToMusicat()" class="btn btn-invite">
-                            <span class="btn-icon">🚀</span>
-                            Convidar Musicat
-                        </a>
-                        <p class="invite-shortcut">Ou use: <code>/musicat</code></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-highlight">Por Que Escolher Nossos Bots?</span>
-            </h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">🍬</div>
-                    </div>
-                    <h3>Rápido e Eficiente</h3>
-                    <p>Processamento instantâneo com respostas em tempo real para melhor experiência do usuário.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">🔒</div>
-                    </div>
-                    <h3>Seguro</h3>
-                    <p>Bots confiáveis com sistema de permissões robusto e proteção de dados.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">🎨</div>
-                    </div>
-                    <h3>Personalizável</h3>
-                    <p>Configure cada aspecto dos bots de acordo com suas necessidades específicas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">💎</div>
-                    </div>
-                    <h3>Premium</h3>
-                    <p>Acesso a recursos premium com limites expandidos e funcionalidades exclusivas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">✨</div>
-                    </div>
-                    <h3>Sempre Atualizado</h3>
-                    <p>Novos recursos e melhorias adicionadas regularmente para melhor desempenho.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">💖</div>
-                    </div>
-                    <h3>Comunidade Ativa</h3>
-                    <p>Suporte dedicado e comunidade vibrante de usuários sempre pronta para ajudar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shortcut Section -->
-    <section class="shortcut-section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-highlight">Atalhos Fofos</span>
-            </h2>
-            <p class="shortcut-description">Use os comandos abaixo para convidar os bots instantaneamente:</p>
-            <div class="shortcuts-grid">
-                <div class="shortcut-card">
-                    <h3>🎀 Convidar Modi</h3>
-                    <code class="shortcut-code">/modi</code>
-                    <p>Redireciona para o link de convite do Modi</p>
-                </div>
-                <div class="shortcut-card">
-                    <h3>🎵 Convidar Musicat</h3>
-                    <code class="shortcut-code">/musicat</code>
-                    <p>Redireciona para o link de convite do Musicat</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-highlight">Entre em Contato</span>
-            </h2>
-            <div class="contact-content">
-                <p>Tem dúvidas ou sugestões? Estamos aqui para ajudar com muito carinho!</p>
-                <div class="contact-links">
-                    <a href="https://discord.gg/cokies" class="contact-link" target="_blank">
-                        <span class="contact-icon">💬</span>
-                        <span>Discord Server</span>
-                    </a>
-                    <a href="https://github.com" class="contact-link" target="_blank">
-                        <span class="contact-icon">🔗</span>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        
+    <script src="js/script.js"></script>
+</body>
 </html>

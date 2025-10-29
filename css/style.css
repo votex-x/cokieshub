@@ -1,0 +1,472 @@
+/* Variáveis de Cores (Discord-like) */
+:root {
+    --color-dark-main: #1e1f22; /* Fundo Principal */
+    --color-dark-secondary: #2b2d31; /* Cartões/Elementos Secundários */
+    --color-text-light: #dcddde; /* Texto Principal */
+    --color-text-muted: #b9bbbe; /* Texto Secundário */
+    --color-accent-purple: #5865f2; /* Cor de Destaque (Discord Blue/Purple) */
+    --color-accent-green: #57f287; /* Cor de Sucesso/Convite */
+    --color-accent-red: #ed4245; /* Cor de Alerta/Erro */
+    --color-accent-cyan: #00d4ff; /* Cor Ciano para Efeitos */
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-dark-main);
+    background: linear-gradient(135deg, #1e1f22 0%, #2b2d31 50%, #1e1f22 100%);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de Fundo com Partículas (Pseudo-elemento) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(88, 101, 242, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(87, 242, 135, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#main-header,
+#content-area,
+#main-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+#main-header {
+    background-color: var(--color-dark-secondary);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-accent-purple);
+    letter-spacing: 1px;
+}
+
+#main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#main-header nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+#main-header nav a:hover {
+    color: var(--color-accent-purple);
+    border-bottom: 2px solid var(--color-accent-purple);
+}
+
+/* Botão de Convite no Header */
+.btn-invite {
+    background-color: var(--color-accent-green);
+    color: var(--color-dark-main) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    border-bottom: none !important;
+}
+
+.btn-invite:hover {
+    background-color: #43b581; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px);
+    color: var(--color-dark-main) !important;
+}
+
+/* Main Content Area */
+#content-area {
+    flex-grow: 1;
+    padding: 40px 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Home Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, var(--color-accent-purple), var(--color-accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(88, 101, 242, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(88, 101, 242, 0.6);
+    }
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Cartões de Bot (Efeito 3D) */
+.bot-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    perspective: 1000px; /* Para o efeito 3D */
+}
+
+.bot-cards .card {
+    background: linear-gradient(135deg, var(--color-dark-secondary) 0%, #36393f 100%);
+    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    border-left: 5px solid var(--color-accent-purple);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-cards .card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(88, 101, 242, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.bot-cards .card:hover::before {
+    opacity: 1;
+}
+
+.bot-cards .card:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 20px 50px rgba(88, 101, 242, 0.3), 0 0 30px rgba(87, 242, 135, 0.2);
+    border-left: 5px solid var(--color-accent-green);
+}
+
+.bot-cards .card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: var(--color-accent-purple);
+}
+
+.bot-cards .card p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.btn-card-invite {
+    display: inline-block;
+    background-color: var(--color-accent-green);
+    color: var(--color-dark-main);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-card-invite:hover {
+    background-color: #43b581;
+}
+
+/* Documentação Section */
+.doc-section {
+    padding: 50px 0;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.doc-section h2 {
+    font-size: 2.5rem;
+    color: var(--color-accent-purple);
+    border-bottom: 3px solid var(--color-accent-purple);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.doc-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--color-accent-green);
+    animation: expandWidth 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes expandWidth {
+    to {
+        width: 100%;
+    }
+}
+
+.bot-tagline {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.doc-section h3 {
+    font-size: 1.8rem;
+    color: var(--color-text-light);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.doc-section ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.doc-section ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.doc-section ul li::before {
+    content: '•';
+    color: var(--color-accent-green);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Tabela de Comandos */
+.command-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+.command-table th, .command-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-dark-main);
+}
+
+.command-table thead th {
+    background: linear-gradient(135deg, var(--color-accent-purple) 0%, #4752c4 100%);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.command-table tbody tr {
+    background-color: var(--color-dark-secondary);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.command-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-accent-green);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.command-table tbody tr:hover {
+    background-color: #36393f;
+    transform: translateX(5px);
+}
+
+.command-table tbody tr:hover::before {
+    transform: scaleY(1);
+}
+
+.command-table code {
+    background-color: var(--color-dark-main);
+    color: var(--color-accent-green);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Botão de Convite Grande */
+.btn-invite-large {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent-green) 0%, #43b581 100%);
+    color: var(--color-dark-main);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 30px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(87, 242, 135, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out 0.4s both;
+}
+
+.btn-invite-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+}
+
+.btn-invite-large:hover::before {
+    left: 100%;
+}
+
+.btn-invite-large:hover {
+    background: linear-gradient(135deg, #43b581 0%, #3aa570 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(87, 242, 135, 0.5);
+}
+
+.btn-invite-large:active {
+    transform: translateY(-2px);
+}
+
+/* Footer */
+#main-footer {
+    background: linear-gradient(180deg, var(--color-dark-secondary) 0%, #1a1b1e 100%);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 1px solid #36393f;
+}
+
+#main-footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .bot-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bot-cards .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #main-header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .doc-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .command-table {
+        font-size: 0.9rem;
+    }
+
+    .command-table th, .command-table td {
+        padding: 10px;
+    }
+}

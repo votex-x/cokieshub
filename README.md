@@ -1,158 +1,129 @@
-# 🍪 Cokies Bots
+# Cokies Bots - Site de Documentação Profissional
 
-Bem-vindo ao **Cokies Bots** - Um site profissional apresentando dois bots Discord incríveis: **Modi** e **Musicat**.
+Bem-vindo ao site de documentação oficial dos **Cokies Bots**: Modi (Moderação Automática) e Musicat (Busca e Download de Músicas).
 
 ## 📋 Sobre
 
-Cokies Bots é um site 100% em HTML, CSS e JavaScript puro (sem frameworks) que apresenta dois bots Discord poderosos:
+Este é um site profissional de documentação desenvolvido com **HTML, CSS e JavaScript puros** (sem frameworks). O site oferece informações detalhadas sobre os dois bots Discord e permite que os usuários os convidem para seus servidores através de links diretos.
 
-- **Modi** - Bot de Moderação com filtros inteligentes e sistema premium
-- **Musicat** - Bot de Música com busca avançada no SoundCloud
+## 🎯 Funcionalidades
 
-## 🎯 Recursos Principais
-
-### 🌐 Website
-- Design profissional com tema avermelhado
-- Totalmente responsivo (mobile, tablet, desktop)
-- Navegação suave e intuitiva
-- Seções organizadas por funcionalidade
-
-### 🤖 Modi Bot
-- Configuração rápida do servidor
-- Filtros de moderação (Mídia, Texto, Links)
-- Auto-reações automáticas
-- Sistema Premium com limites expandidos
-- Gerenciamento de permissões
-
-### 🎵 Musicat Bot
-- Busca avançada no SoundCloud
-- Múltiplas estratégias de busca
-- Download de MP3 até 25MB
-- Detecção automática de versões (Slow, Speed, Remix, etc.)
-- Ordenação por popularidade
-
-### ⚡ Sistema de Atalhos
-- `/modi` - Redireciona para convite do Modi
-- `/musicat` - Redireciona para convite do Musicat
-- Atalhos de teclado (Ctrl+Shift+M, Ctrl+Shift+U)
-- Rastreamento de cliques e estatísticas
-
-## 🚀 Como Usar
-
-### Convidar Bots
-1. **Modi**: Clique em "Convidar Modi" ou use `/modi`
-2. **Musicat**: Clique em "Convidar Musicat" ou use `/musicat`
-
-### Atalhos de Teclado
-- `Ctrl+Shift+M` - Convidar Modi
-- `Ctrl+Shift+U` - Convidar Musicat
-- `Ctrl+Shift+H` - Ver ajuda
-
-### Console (DevTools)
-```javascript
-// Ver comandos disponíveis
-cokies.help()
-
-// Convidar bots
-cokies.invite.modi()
-cokies.invite.musicat()
-
-// Ver estatísticas
-cokies.stats()
-
-// Testar sistema
-testCokies()
-```
+- **Página Inicial Atraente**: Apresentação dos bots com efeitos visuais profissionais.
+- **Documentação Detalhada**: Páginas específicas para Modi e Musicat com funcionalidades e comandos.
+- **Redirecionamento Inteligente**: URLs curtas (`/modi`, `/musicat`) que redirecionam para os links de convite.
+- **Design Responsivo**: Interface que se adapta a diferentes tamanhos de tela.
+- **Efeitos Visuais**: Animações suaves, gradientes, partículas flutuantes e transições.
+- **Navegação Suave**: Transições de página sem recarregar (SPA - Single Page Application).
 
 ## 📁 Estrutura de Arquivos
 
 ```
 cokieshub/
-├── index.html          # Página principal
-├── styles.css          # Estilos e tema
-├── script.js           # Funcionalidades e atalhos
+├── index.html          # Página principal (ponto de entrada)
+├── .htaccess           # Configuração de redirecionamento (Apache)
 ├── README.md           # Este arquivo
-└── CNAME               # Configuração de domínio
+├── css/
+│   └── style.css       # Estilos CSS (tema escuro, animações, responsividade)
+├── js/
+│   └── script.js       # JavaScript (navegação, redirecionamento, efeitos)
+└── assets/             # Pasta para ícones e imagens (vazia por padrão)
 ```
 
-## 🎨 Tema e Design
+## 🚀 Como Usar
 
-- **Cor Primária**: Vermelho (#c41e3a)
-- **Cor Secundária**: Azul Escuro (#2c3e50)
-- **Cor de Destaque**: Vermelho Claro (#dc143c)
-- **Fonte**: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
+### 1. Configuração Local
 
-## 🔧 Funcionalidades Técnicas
+Para testar o site localmente, você pode usar um servidor web simples:
 
-### Sistema de Encurtador de URLs
-- Armazena atalhos em localStorage
-- Rastreia número de cliques
-- Suporta criação dinâmica de atalhos
+```bash
+# Com Python 3
+python -m http.server 8000
 
-### Detecção de Comandos
-- Parâmetro URL: `?cmd=/modi` ou `?cmd=/musicat`
-- Atalhos de teclado globais
-- Suporte a console JavaScript
+# Com Node.js (http-server)
+npx http-server
 
-### Animações
-- Entrada suave de elementos
-- Transições de hover
-- Efeitos de scroll suave
-
-### Responsividade
-- Mobile-first design
-- Breakpoints: 768px e 480px
-- Grid layout adaptativo
-
-## 📊 Estatísticas
-
-O sistema rastreia:
-- Número de cliques em cada atalho
-- Data de criação dos atalhos
-- Histórico de uso
-
-## 🌍 Links dos Bots
-
-### Modi
-```
-https://discord.com/oauth2/authorize?client_id=1424226592858701896&permissions=11264&integration_type=0&scope=bot
+# Com PHP
+php -S localhost:8000
 ```
 
-### Musicat
+Depois, acesse `http://localhost:8000` no seu navegador.
+
+### 2. Configuração dos Links de Convite
+
+Os links de convite dos bots estão definidos no arquivo `js/script.js`. Você deve substituir os placeholders pelos links reais:
+
+```javascript
+const INVITE_LINKS = {
+    modi: "https://discord.com/oauth2/authorize?client_id=MODI_CLIENT_ID&scope=bot%20applications.commands&permissions=8",
+    musicat: "https://discord.com/oauth2/authorize?client_id=MUSICAT_CLIENT_ID&scope=bot%20applications.commands&permissions=8"
+};
 ```
-https://discord.com/oauth2/authorize?client_id=1430266604922601592&permissions=2147494912&integration_type=0&scope=bot+applications.commands
+
+Substitua `MODI_CLIENT_ID` e `MUSICAT_CLIENT_ID` pelos IDs reais dos seus bots Discord.
+
+### 3. Redirecionamento de URLs
+
+O site suporta os seguintes redirecionamentos:
+
+- **`/modi`** → Redireciona para o link de convite do Modi
+- **`/musicat`** → Redireciona para o link de convite do Musicat
+- **`/`** → Página inicial
+- **`/?bot=modi`** → Página de documentação do Modi
+- **`/?bot=musicat`** → Página de documentação do Musicat
+
+## 🎨 Personalizações
+
+### Cores
+
+As cores do site estão definidas como variáveis CSS em `css/style.css`:
+
+```css
+:root {
+    --color-dark-main: #1e1f22;
+    --color-accent-purple: #5865f2;
+    --color-accent-green: #57f287;
+    /* ... mais cores */
+}
 ```
 
-## 💻 Compatibilidade
+Você pode modificar essas cores para personalizar o tema.
 
-- ✅ Chrome/Chromium
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Opera
-- ✅ Navegadores móveis
+### Conteúdo
 
-## 🔐 Segurança
+O conteúdo de cada página está definido no objeto `DOC_CONTENT` em `js/script.js`. Você pode editar o HTML de cada seção diretamente lá.
 
-- Sem dependências externas
-- Sem rastreamento de terceiros
-- Dados armazenados localmente apenas
-- HTTPS recomendado
+## 📱 Responsividade
+
+O site é totalmente responsivo e se adapta a:
+
+- **Desktop** (1200px+)
+- **Tablet** (768px - 1199px)
+- **Mobile** (até 767px)
+
+## 🌐 Deploy
+
+Para fazer deploy do site, você pode usar:
+
+1. **GitHub Pages**: Faça push do repositório para o GitHub e ative o GitHub Pages.
+2. **Vercel**: Conecte seu repositório e faça deploy automaticamente.
+3. **Netlify**: Similar ao Vercel, com suporte a redirecionamentos automáticos.
+4. **Servidor Web Tradicional**: Copie os arquivos para o servidor e configure o `.htaccess` (Apache) ou equivalente (Nginx).
+
+## 🔧 Tecnologias Utilizadas
+
+- **HTML5**: Estrutura semântica
+- **CSS3**: Estilos, animações e responsividade
+- **JavaScript Vanilla**: Navegação, redirecionamento e efeitos interativos
+- **Google Fonts**: Tipografia (Poppins)
 
 ## 📝 Licença
 
-© 2024 Cokies Bots. Todos os direitos reservados.
+Este projeto é fornecido como está. Sinta-se livre para modificar e distribuir conforme necessário.
 
-## 🤝 Suporte
+## 💬 Suporte
 
-Para dúvidas ou sugestões:
-- Discord: [Servidor Cokies](https://discord.gg/cokies)
-- GitHub: [Repositório](https://github.com)
-
-## 🎉 Agradecimentos
-
-Desenvolvido com ❤️ para a comunidade Discord.
+Para dúvidas ou sugestões sobre o site, entre em contato com o desenvolvedor.
 
 ---
 
-**Última atualização**: Outubro 2024
+**Desenvolvido com ❤️ usando HTML, CSS e JavaScript Puros**

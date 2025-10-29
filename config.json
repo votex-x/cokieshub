@@ -1,0 +1,78 @@
+{
+  "site": {
+    "title": "Cokies Bots",
+    "description": "Documentação profissional dos bots Discord Modi e Musicat",
+    "author": "Cokies Bots Team"
+  },
+  "bots": {
+    "modi": {
+      "name": "Modi",
+      "emoji": "🤖",
+      "description": "Moderação Automática e Filtros Inteligentes",
+      "tagline": "O bot que pensa por você. Filtros avançados para um servidor organizado.",
+      "inviteLink": "https://discord.com/oauth2/authorize?client_id=MODI_CLIENT_ID&scope=bot%20applications.commands&permissions=8",
+      "features": [
+        "Filtros Inteligentes",
+        "Auto-Reação",
+        "Exceções por Cargo",
+        "Sistema Premium"
+      ],
+      "commands": [
+        {
+          "name": "/setup",
+          "description": "Configuração rápida inicial."
+        },
+        {
+          "name": "/setfilter",
+          "description": "Define o tipo de filtro para um canal."
+        },
+        {
+          "name": "/viewfilters",
+          "description": "Lista todos os filtros ativos no servidor."
+        },
+        {
+          "name": "/filterinfo",
+          "description": "Detalha os tipos de filtros disponíveis."
+        }
+      ]
+    },
+    "musicat": {
+      "name": "Musicat",
+      "emoji": "🎵",
+      "description": "Busca Avançada e Download de Músicas",
+      "tagline": "O bot de música que realmente encontra o que você quer ouvir.",
+      "inviteLink": "https://discord.com/oauth2/authorize?client_id=MUSICAT_CLIENT_ID&scope=bot%20applications.commands&permissions=8",
+      "features": [
+        "Busca Aprimorada",
+        "Download Direto (MP3)",
+        "Seleção por Botões"
+      ],
+      "commands": [
+        {
+          "name": "/play <música>",
+          "description": "Busca e permite selecionar a versão para download."
+        },
+        {
+          "name": "/fast <música>",
+          "description": "Download rápido da primeira versão encontrada."
+        },
+        {
+          "name": "/search <música>",
+          "description": "Apenas busca e mostra os resultados."
+        }
+      ]
+    }
+  },
+  "theme": {
+    "colors": {
+      "darkMain": "#1e1f22",
+      "darkSecondary": "#2b2d31",
+      "textLight": "#dcddde",
+      "textMuted": "#b9bbbe",
+      "accentPurple": "#5865f2",
+      "accentGreen": "#57f287",
+      "accentRed": "#ed4245",
+      "accentCyan": "#00d4ff"
+    }
+  }
+}
