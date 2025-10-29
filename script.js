@@ -4,7 +4,7 @@ const BOT_LINKS = {
     musicat: 'https://discord.com/oauth2/authorize?client_id=1430266604922601592&permissions=2147494912&integration_type=0&scope=bot+applications.commands'
 };
 
-// ===== SISTEMA DE ENCURTADOR DE URLs =====
+// ===== SISTEMA DE ENCURTADOR DE URLs (Mantido) =====
 class URLShortener {
     constructor() {
         this.shortcuts = this.loadShortcuts();
@@ -75,7 +75,7 @@ function redirectToMusicat() {
     }
 }
 
-// ===== SISTEMA DE COMANDO DE ATALHO =====
+// ===== SISTEMA DE COMANDO DE ATALHO (Mantido) =====
 class CommandHandler {
     constructor() {
         this.commands = {
@@ -97,7 +97,7 @@ class CommandHandler {
     showHelp() {
         const helpText = `
 ╔════════════════════════════════════════╗
-║     COKIES BOTS - COMANDOS RÁPIDOS     ║
+║     COKIES BOTS - COMANDOS FOFOS     ║
 ╚════════════════════════════════════════╝
 
 📌 Atalhos Disponíveis:
@@ -142,7 +142,7 @@ class CommandHandler {
 // Instância global do manipulador de comandos
 const commandHandler = new CommandHandler();
 
-// ===== DETECÇÃO DE COMANDOS NA URL =====
+// ===== DETECÇÃO DE COMANDOS NA URL (Mantido) =====
 function checkURLCommand() {
     const params = new URLSearchParams(window.location.search);
     const cmd = params.get('cmd');
@@ -152,7 +152,7 @@ function checkURLCommand() {
     }
 }
 
-// ===== DETECÇÃO DE COMANDOS POR TECLADO =====
+// ===== DETECÇÃO DE COMANDOS POR TECLADO (Mantido) =====
 function setupKeyboardShortcuts() {
     document.addEventListener('keydown', function(event) {
         // Ctrl+Shift+M para Modi
@@ -173,7 +173,7 @@ function setupKeyboardShortcuts() {
     });
 }
 
-// ===== SCROLL SUAVE PARA SEÇÕES =====
+// ===== SCROLL SUAVE PARA SEÇÕES (Mantido) =====
 function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -192,7 +192,7 @@ function setupSmoothScroll() {
     });
 }
 
-// ===== ANIMAÇÃO DE ENTRADA PARA CARDS =====
+// ===== ANIMAÇÃO DE ENTRADA PARA CARDS (Mantido) =====
 function setupIntersectionObserver() {
     const observerOptions = {
         threshold: 0.1,
@@ -214,7 +214,7 @@ function setupIntersectionObserver() {
     });
 }
 
-// ===== FUNÇÃO DE CÓPIA PARA CLIPBOARD =====
+// ===== FUNÇÃO DE CÓPIA PARA CLIPBOARD (Mantido) =====
 function copyToClipboard(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
@@ -237,25 +237,32 @@ function fallbackCopy(text) {
     showNotification('Copiado para a área de transferência!', 'success');
 }
 
-// ===== SISTEMA DE NOTIFICAÇÕES =====
+// ===== SISTEMA DE NOTIFICAÇÕES (Estilo Hello Kitty) =====
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
+    
+    // Cores Hello Kitty
+    const primaryColor = '#FF69B4'; // Rosa Choque
+    const secondaryColor = '#FFFFFF'; // Branco
+    const successColor = '#FF1493'; // Rosa Escuro
+    const infoColor = '#FFB6C1'; // Rosa Claro
+
     notification.style.cssText = `
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: ${type === 'success' ? 'linear-gradient(135deg, #FF006E 0%, #00D9FF 100%)' : 'linear-gradient(135deg, #8338EC 0%, #00D9FF 100%)'};
-        color: white;
+        background: ${type === 'success' ? successColor : infoColor};
+        color: ${type === 'success' ? secondaryColor : '#36454F'};
         padding: 15px 20px;
-        border-radius: 12px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
         z-index: 10000;
         animation: slideInUp 0.3s ease;
-        font-weight: 600;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
+        font-weight: 700;
+        border: 3px solid ${primaryColor};
+        font-family: 'Comic Sans MS', cursive, sans-serif;
     `;
     
     document.body.appendChild(notification);
@@ -268,7 +275,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// ===== ADICIONAR ESTILOS DE NOTIFICAÇÃO =====
+// ===== ADICIONAR ESTILOS DE NOTIFICAÇÃO (Mantido) =====
 function addNotificationStyles() {
     const style = document.createElement('style');
     style.textContent = `
@@ -286,18 +293,18 @@ function addNotificationStyles() {
     document.head.appendChild(style);
 }
 
-// ===== ANÁLISE DE CLIQUES NOS BOTÕES =====
+// ===== ANÁLISE DE CLIQUES NOS BOTÕES (Mantido) =====
 function setupAnalytics() {
     document.querySelectorAll('.btn-invite').forEach(btn => {
         btn.addEventListener('click', function() {
             const botName = this.closest('.bot-card').querySelector('.bot-name').textContent;
-            console.log(`🎯 Clique em convite: ${botName}`);
+            console.log(`💖 Clique em convite: ${botName}`);
             showNotification(`Redirecionando para ${botName}...`, 'info');
         });
     });
 }
 
-// ===== MENU MOBILE =====
+// ===== MENU MOBILE (Mantido) =====
 function setupMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -316,18 +323,18 @@ function setupMobileMenu() {
     }
 }
 
-// ===== EFEITO DE PARALLAX =====
-function setupParallax() {
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.backgroundPosition = `0px ${scrolled * 0.5}px`;
-        }
-    });
-}
+// ===== EFEITO DE PARALLAX (Removido para o tema HK) =====
+// function setupParallax() {
+//     window.addEventListener('scroll', function() {
+//         const scrolled = window.pageYOffset;
+//         const hero = document.querySelector('.hero');
+//         if (hero) {
+//             hero.style.backgroundPosition = `0px ${scrolled * 0.5}px`;
+//         }
+//     });
+// }
 
-// ===== SUPORTE A COMANDO VIA CONSOLE =====
+// ===== SUPORTE A COMANDO VIA CONSOLE (Mantido) =====
 window.cokies = {
     invite: {
         modi: redirectToModi,
@@ -344,7 +351,7 @@ window.cokies = {
 
 // ===== INICIALIZAÇÃO PRINCIPAL =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c🍪 Cokies Bots - Inicializando...', 'color: #FF006E; font-size: 16px; font-weight: bold;');
+    console.log('%c🎀 Cokies Bots - Inicializando...', 'color: #FF69B4; font-size: 16px; font-weight: bold;');
     
     // Inicializar todos os sistemas
     initializeShortcuts();
@@ -354,14 +361,14 @@ document.addEventListener('DOMContentLoaded', function() {
     addNotificationStyles();
     setupAnalytics();
     setupMobileMenu();
-    setupParallax();
+    // setupParallax(); // Removido
     checkURLCommand();
     
-    console.log('%c✅ Cokies Bots - Pronto!', 'color: #00D9FF; font-size: 14px; font-weight: bold;');
-    console.log('%c💡 Digite "cokies.help()" no console para ver comandos disponíveis', 'color: #FFBE0B; font-size: 12px;');
+    console.log('%c✅ Cokies Bots - Pronto!', 'color: #FF1493; font-size: 14px; font-weight: bold;');
+    console.log('%c💡 Digite "cokies.help()" no console para ver comandos disponíveis', 'color: #FFD700; font-size: 12px;');
 });
 
-// ===== VERIFICAÇÃO DE SUPORTE A STORAGE =====
+// ===== VERIFICAÇÃO DE SUPORTE A STORAGE (Mantido) =====
 function isLocalStorageAvailable() {
     try {
         const test = '__test__';
@@ -373,13 +380,13 @@ function isLocalStorageAvailable() {
     }
 }
 
-// ===== FUNÇÃO DE TESTE =====
+// ===== FUNÇÃO DE TESTE (Mantido) =====
 window.testCokies = function() {
-    console.log('%c🧪 Testando Cokies Bots...', 'color: #FF006E; font-weight: bold;');
+    console.log('%c🧪 Testando Cokies Bots...', 'color: #FF69B4; font-weight: bold;');
     console.log('📊 Atalhos:', shortener.getAllShortcuts());
-    console.log('%c✅ Tudo funcionando!', 'color: #00D9FF; font-weight: bold;');
+    console.log('%c✅ Tudo funcionando!', 'color: #FF1493; font-weight: bold;');
 };
 
-// ===== EXPORTAR PARA GLOBAL =====
+// ===== EXPORTAR PARA GLOBAL (Mantido) =====
 window.redirectToModi = redirectToModi;
 window.redirectToMusicat = redirectToMusicat;
