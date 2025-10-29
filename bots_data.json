@@ -1,0 +1,101 @@
+{
+  "bots": [
+    {
+      "id": "1424226592858701896",
+      "slug": "modi",
+      "name": "Modi",
+      "tagline": "Moderação Automática Inteligente para o seu Servidor Discord.",
+      "description": "Modi é um bot de moderação automática robusto, projetado para manter a ordem e o foco em seus canais do Discord. Utilizando o Firebase Realtime Database para configurações persistentes e por servidor, ele oferece um sistema de filtragem altamente configurável, garantindo que apenas o conteúdo desejado (mídia, texto, links ou regex customizada) seja permitido em canais específicos.",
+      "features": [
+        "Filtragem Automática de Mensagens (Mídia, Texto, Link, Regex)",
+        "Mensagens de Aviso Temporárias para Usuários Infratores",
+        "Configurações Persistentes e Independentes por Servidor (via Firebase)",
+        "Comandos Administrativos de Fácil Utilização (Slash Commands)",
+        "Suporte a Múltiplos Tipos de Filtro por Canal"
+      ],
+      "commands": [
+        {
+          "command": "/setfilter",
+          "usage": "/setfilter [canal] [tipo] [regex_opcional]",
+          "details": "Define o filtro de conteúdo para um canal específico. Tipos: `media`, `text`, `link`, `custom`."
+        },
+        {
+          "command": "/removefilter",
+          "usage": "/removefilter [canal]",
+          "details": "Remove qualquer filtro de conteúdo ativo de um canal."
+        },
+        {
+          "command": "/viewfilters",
+          "usage": "/viewfilters",
+          "details": "Exibe a lista de todos os filtros de conteúdo configurados no servidor."
+        }
+      ],
+      "technology": [
+        "Python",
+        "discord.py",
+        "Firebase Realtime Database",
+        "Slash Commands"
+      ],
+      "icon": "https://cdn.discordapp.com/avatars/1424226592858701896/cdb739b65c97d5695ba05d3f2f683c31.png",
+      "username": "Modi",
+      "discriminator": "8143",
+      "avatar": "cdb739b65c97d5695ba05d3f2f683c31",
+      "public_flags": 0,
+      "bot": true,
+      "verified": true,
+      "global_name": null,
+      "avatar_url": "https://cdn.discordapp.com/avatars/1424226592858701896/cdb739b65c97d5695ba05d3f2f683c31.png"
+    },
+    {
+      "id": "1430266604922601592",
+      "slug": "musicat",
+      "name": "Musicat",
+      "tagline": "O DJ Felino que Traz a Música Perfeita para o seu Canal de Voz.",
+      "description": "Musicat é um bot de música de alta qualidade, focado em fornecer uma experiência de áudio impecável no Discord. Construído com `discord.py[voice]` e `yt-dlp`, ele é capaz de reproduzir áudio de diversas fontes, incluindo YouTube e SoundCloud, com comandos simples e eficientes para gerenciar a fila de reprodução e o volume.",
+      "features": [
+        "Reprodução de Música de Alta Fidelidade",
+        "Suporte a Múltiplas Fontes (YouTube, SoundCloud e mais via yt-dlp)",
+        "Gerenciamento de Fila de Reprodução",
+        "Comandos de Controle de Mídia (Play, Pause, Stop, Skip)",
+        "Baixa Latência e Estabilidade (usando PyNaCl)"
+      ],
+      "commands": [
+        {
+          "command": "/play",
+          "usage": "/play [url ou termo de busca]",
+          "details": "Inicia a reprodução de uma música ou adiciona à fila. Aceita URLs ou termos de busca."
+        },
+        {
+          "command": "/skip",
+          "usage": "/skip",
+          "details": "Pula a música atual para a próxima na fila."
+        },
+        {
+          "command": "/queue",
+          "usage": "/queue",
+          "details": "Exibe a lista de músicas atualmente na fila de reprodução."
+        },
+        {
+          "command": "/stop",
+          "usage": "/stop",
+          "details": "Para a reprodução e desconecta o bot do canal de voz."
+        }
+      ],
+      "technology": [
+        "Python",
+        "discord.py[voice]",
+        "yt-dlp",
+        "PyNaCl"
+      ],
+      "icon": "https://cdn.discordapp.com/avatars/1430266604922601592/4358b45348c56615e49f1a13a31cef5d.png",
+      "username": "Musicat",
+      "discriminator": "8698",
+      "avatar": "4358b45348c56615e49f1a13a31cef5d",
+      "public_flags": 0,
+      "bot": true,
+      "verified": true,
+      "global_name": null,
+      "avatar_url": "https://cdn.discordapp.com/avatars/1430266604922601592/4358b45348c56615e49f1a13a31cef5d.png"
+    }
+  ]
+}
