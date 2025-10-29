@@ -1,124 +1,110 @@
-# Sakibites Bot Portfolio - Build Estático
+# Sakibites Bot Portfolio - Versão Reconstruída
 
-Este é o build pronto para produção do portfólio dos bots Discord Modi e Musicat.
+Este é o site portfolio dos bots Discord Sakibites, completamente reconstruído em **HTML, CSS e JavaScript puros**, sem dependências de frameworks como React.
 
-## Conteúdo
+## 📁 Estrutura do Projeto
 
-- `index.html` - Arquivo HTML principal (contém toda a aplicação)
-- `assets/` - Diretório com CSS e JavaScript compilados
-  - `index-ZeTkMOr7.css` - Estilos CSS minificados
-  - `index-Bs1hw_pw.js` - JavaScript minificado
-- `bots_data.json` - Dados dos bots (Modi e Musicat)
+```
+sakibites_rebuild/
+├── index.html       # Arquivo HTML principal
+├── style.css        # Estilos CSS
+├── script.js        # Interatividade em JavaScript
+├── README.md        # Este arquivo
+└── CNAME            # Arquivo de configuração do domínio (dev.sakibites.space)
+```
 
-## Como Hospedar
+## 🎨 Características
 
-### Opção 1: GitHub Pages
+- **Design Moderno e Responsivo**: Layout que se adapta a diferentes tamanhos de tela
+- **Sem Dependências Externas**: Apenas HTML, CSS e JavaScript puros
+- **Performance Otimizada**: Carregamento rápido e eficiente
+- **Acessibilidade**: Semântica HTML adequada e contraste de cores
+- **Interatividade**: Efeitos suaves, animações ao scroll e feedback visual
 
-1. Crie um repositório no GitHub chamado `sakibites-portfolio`
-2. Clone o repositório e copie todos os arquivos deste build para a raiz
-3. Faça commit e push:
-   ```bash
-   git add .
-   git commit -m "Deploy build"
-   git push origin main
-   ```
-4. Vá para Settings → Pages e selecione "main branch" como source
+## 🎯 Seções do Site
 
-### Opção 2: Netlify
+1. **Navegação**: Menu simples e intuitivo
+2. **Hero**: Seção de boas-vindas com chamada para ação
+3. **Recursos**: Três cartões destacando recursos principais
+4. **Nossos Bots**: Detalhes sobre Modi e Musicat
+5. **Call to Action**: Seção de convite para se juntar ao Discord
+6. **Rodapé**: Links e informações de contato
 
-1. Acesse https://netlify.com
-2. Clique em "New site from Git"
-3. Conecte seu repositório GitHub
-4. Configure: Build command (deixe em branco), Publish directory: `.`
-5. Deploy!
+## 🚀 Como Usar
 
-### Opção 3: Vercel
+### Localmente
 
-1. Acesse https://vercel.com
-2. Clique em "New Project"
-3. Importe seu repositório GitHub
-4. Configure: Framework: Other, Build Command (deixe em branco)
-5. Deploy!
+1. Clone o repositório ou baixe os arquivos
+2. Abra `index.html` no seu navegador
+3. O site será exibido com todos os estilos e interatividades
 
-### Opção 4: Servidor Web Tradicional
+### Em Produção
 
-Copie todos os arquivos para o diretório raiz do seu servidor e configure o servidor para servir `index.html` como fallback.
+1. Faça upload dos arquivos para seu servidor web
+2. Certifique-se de que o arquivo `CNAME` está configurado para `dev.sakibites.space`
+3. Configure seu DNS para apontar para o servidor
 
-#### Nginx
+## 🔧 Personalização
 
-```nginx
-server {
-    listen 80;
-    server_name sakibites.space;
-    root /var/www/sakibites-portfolio;
-    
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
+### Alterar Cores
+
+Edite as variáveis CSS em `style.css`:
+
+```css
+:root {
+    --color-primary: #6366f1;      /* Cor primária */
+    --color-secondary: #a78bfa;    /* Cor secundária */
+    --color-background: #0f172a;   /* Fundo */
+    /* ... outras cores */
 }
 ```
 
-#### Apache
+### Atualizar Links
 
-```apache
-<Directory /var/www/sakibites-portfolio>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.html [L]
-</Directory>
+Atualize os links de Discord, GitHub e contato nos arquivos HTML ou use a função JavaScript:
+
+```javascript
+updateLinks({
+    discord: 'https://discord.gg/seu-servidor',
+    github: 'https://github.com/seu-usuario',
+    contact: 'seu-email@exemplo.com'
+});
 ```
 
-## Rotas Disponíveis
+### Adicionar Imagens dos Bots
 
-- `/` - Página inicial com lista de bots
-- `/p/Modi` - Portfólio do bot Modi
-- `/p/Musicat` - Portfólio do bot Musicat
+Substitua as URLs das imagens placeholder pelos URLs reais dos avatares dos bots:
 
-## Configuração de Domínio Customizado
-
-### GitHub Pages
-
-1. Crie um arquivo `CNAME` na raiz com o conteúdo:
-   ```
-   sakibites.space
-   ```
-2. Configure o DNS do seu domínio para apontar para GitHub Pages
-3. Vá para Settings → Pages e configure o domínio customizado
-
-## Customizações
-
-### Alterar Dados dos Bots
-
-Edite o arquivo `bots_data.json` com as informações dos seus bots.
-
-## Estrutura de Arquivos
-
-```
-.
-├── index.html              # Arquivo principal
-├── bots_data.json         # Dados dos bots
-├── assets/
-│   ├── index-Bs1hw_pw.js  # JavaScript compilado
-│   └── index-ZeTkMOr7.css # CSS compilado
-└── README.md              # Este arquivo
+```html
+<img src="caminho/para/imagem/modi.png" alt="Avatar do Bot Modi">
+<img src="caminho/para/imagem/musicat.png" alt="Avatar do Bot Musicat">
 ```
 
-## Performance
+## 📱 Responsividade
 
-- Build minificado e otimizado
-- CSS e JS compilados
-- Gzip compression recomendado
-- Cache busting via hash de arquivo
+O site é totalmente responsivo e funciona bem em:
 
-## Segurança
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (até 767px)
 
-- Sem tokens ou dados sensíveis
-- Todos os dados são públicos
-- HTTPS recomendado em produção
+## ♿ Acessibilidade
+
+- Semântica HTML apropriada
+- Atributos `alt` em imagens
+- Contraste de cores adequado
+- Navegação por teclado suportada
+
+## 📄 Licença
+
+Este projeto é parte do portfólio Sakibites. Todos os direitos reservados © 2025 Sakibites.
+
+## 📞 Contato
+
+- Email: contato@sakibites.space
+- Discord: [Junte-se ao servidor]
+- GitHub: [Visite nosso repositório]
 
 ---
 
-Desenvolvido com ❤️ para a comunidade Sakibites
+**Desenvolvido com ❤️ em HTML, CSS e JavaScript puros**
