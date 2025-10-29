@@ -3,43 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakibites Bots - Nexus de Convites</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fonte Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
-    <!-- Ícones Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Cokies Bots - Bots Discord Premium</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-        <h1>Cokies center</h1>
-        <p class="subtitle">Acesso direto aos nossos bots mais poderosos. Clique para convidar e transformar seu servidor.</p>
-
-        <div class="bots-grid">
-            <!-- Card Modi -->
-            <div class="bot-card">
-                <div class="bot-card-content">
-                    <span class="icon"><i class="fas fa-shield-alt"></i></span>
-                    <h2>MODI</h2>
-                    <p>O Módulo de Operações de Defesa Inteligente. Segurança, moderação e filtragem automática de conteúdo de elite.</p>
-                    <a href="/Modi" class="btn">CONVIDAR MODI</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon">🍪</span>
+                    <span class="logo-text">Cokies Bots</span>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#bots" class="nav-link">Bots</a></li>
+                    <li><a href="#features" class="nav-link">Recursos</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
             </div>
+        </div>
+    </nav>
 
-            <!-- Card Musicat -->
-            <div class="bot-card">
-                <div class="bot-card-content">
-                    <span class="icon"><i class="fas fa-music"></i></span>
-                    <h2>MUSICAT</h2>
-                    <p>Seu DJ felino pessoal. Música de alta fidelidade, suporte a múltiplas fontes e comandos intuitivos.</p>
-                    <a href="/Musicat" class="btn">CONVIDAR MUSICAT</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bem-vindo ao Cokies Bots</h1>
+                <p class="hero-subtitle">Bots Discord profissionais e poderosos para sua comunidade</p>
+                <p class="hero-description">Descubra Modi e Musicat - dois bots incríveis para moderação e música</p>
+                <div class="hero-buttons">
+                    <a href="#bots" class="btn btn-primary">Explorar Bots</a>
+                    <a href="#features" class="btn btn-secondary">Ver Recursos</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Bots Section -->
+    <section id="bots" class="bots-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Bots</h2>
+            <div class="bots-grid">
+                <!-- Modi Bot Card -->
+                <div class="bot-card">
+                    <div class="bot-header">
+                        <div class="bot-icon">🤖</div>
+                        <h3 class="bot-name">Modi</h3>
+                        <p class="bot-status">Bot de Moderação</p>
+                    </div>
+                    <div class="bot-description">
+                        <p>Modi é um bot de moderação avançado com filtros inteligentes, auto-reações e gerenciamento premium.</p>
+                    </div>
+                    <div class="bot-commands">
+                        <h4>Comandos Principais:</h4>
+                        <ul>
+                            <li><code>/setup</code> - Configuração rápida do bot</li>
+                            <li><code>/quickfilter</code> - Configuração rápida de filtros</li>
+                            <li><code>/setfilter</code> - Define filtro de moderação</li>
+                            <li><code>/viewfilters</code> - Visualiza filtros ativos</li>
+                            <li><code>/check_premium</code> - Verifica status Premium</li>
+                            <li><code>/grant_premium</code> - Concede Premium (Owner)</li>
+                            <li><code>/revoke_premium</code> - Revoga Premium (Owner)</li>
+                        </ul>
+                    </div>
+                    <div class="bot-features">
+                        <h4>Recursos:</h4>
+                        <ul>
+                            <li>✅ Filtros de Mídia, Texto e Links</li>
+                            <li>✅ Auto-Reações Automáticas</li>
+                            <li>✅ Sistema Premium com Limites</li>
+                            <li>✅ Gerenciamento de Permissões</li>
+                            <li>✅ Estatísticas em Tempo Real</li>
+                        </ul>
+                    </div>
+                    <div class="bot-invite">
+                        <a href="javascript:void(0)" onclick="redirectToModi()" class="btn btn-invite">Convidar Modi</a>
+                        <p class="invite-shortcut">Ou use: <code>/modi</code></p>
+                    </div>
+                </div>
+
+                <!-- Musicat Bot Card -->
+                <div class="bot-card">
+                    <div class="bot-header">
+                        <div class="bot-icon">🎵</div>
+                        <h3 class="bot-name">Musicat</h3>
+                        <p class="bot-status">Bot de Música</p>
+                    </div>
+                    <div class="bot-description">
+                        <p>Musicat é um bot de música avançado com busca inteligente no SoundCloud e download de MP3.</p>
+                    </div>
+                    <div class="bot-commands">
+                        <h4>Comandos Principais:</h4>
+                        <ul>
+                            <li><code>/play</code> - Busca múltiplas versões de músicas</li>
+                            <li><code>/fast</code> - Download rápido da primeira versão</li>
+                            <li><code>/search</code> - Apenas busca músicas sem baixar</li>
+                            <li><code>/help</code> - Mostra todos os comandos</li>
+                        </ul>
+                    </div>
+                    <div class="bot-features">
+                        <h4>Recursos:</h4>
+                        <ul>
+                            <li>✅ Busca Avançada no SoundCloud</li>
+                            <li>✅ Múltiplas Estratégias de Busca</li>
+                            <li>✅ Download de MP3 até 25MB</li>
+                            <li>✅ Detecção de Versões (Slow, Speed, Remix)</li>
+                            <li>✅ Ordenação por Popularidade</li>
+                        </ul>
+                    </div>
+                    <div class="bot-invite">
+                        <a href="javascript:void(0)" onclick="redirectToMusicat()" class="btn btn-invite">Convidar Musicat</a>
+                        <p class="invite-shortcut">Ou use: <code>/musicat</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Por Que Escolher Nossos Bots?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rápido e Eficiente</h3>
+                    <p>Processamento instantâneo com respostas em tempo real para melhor experiência do usuário.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguro</h3>
+                    <p>Bots confiáveis com sistema de permissões robusto e proteção de dados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalizável</h3>
+                    <p>Configure cada aspecto dos bots de acordo com suas necessidades específicas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium</h3>
+                    <p>Acesso a recursos premium com limites expandidos e funcionalidades exclusivas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Sempre Atualizado</h3>
+                    <p>Novos recursos e melhorias adicionadas regularmente para melhor desempenho.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Comunidade Ativa</h3>
+                    <p>Suporte dedicado e comunidade vibrante de usuários sempre pronta para ajudar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shortcut Section -->
+    <section class="shortcut-section">
+        <div class="container">
+            <h2 class="section-title">Atalhos Rápidos</h2>
+            <p class="shortcut-description">Use os comandos abaixo para convidar os bots instantaneamente:</p>
+            <div class="shortcuts-grid">
+                <div class="shortcut-card">
+                    <h3>Convidar Modi</h3>
+                    <code class="shortcut-code">/modi</code>
+                    <p>Redireciona para o link de convite do Modi</p>
+                </div>
+                <div class="shortcut-card">
+                    <h3>Convidar Musicat</h3>
+                    <code class="shortcut-code">/musicat</code>
+                    <p>Redireciona para o link de convite do Musicat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <p>Tem dúvidas ou sugestões? Estamos aqui para ajudar!</p>
+                <div class="contact-links">
+                    <a href="https://discord.gg/cokies" class="contact-link" target="_blank">
+                        <span class="contact-icon">💬</span>
+                        <span>Discord Server</span>
+                    </a>
+                    <a href="https://github.com" class="contact-link" target="_blank">
+                        <span class="contact-icon">🔗</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p>Desenvolvido com ❤️ e Estilo Cyberpunk em HTML/CSS Puro | Sakibites © 2025</p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Cokies Bots. Todos os direitos reservados.</p>
+                <p>Desenvolvido com ❤️ para a comunidade Discord</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

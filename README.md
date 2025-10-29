@@ -1,41 +1,158 @@
-# Sakibites Bot Nexus - Versão Cyberpunk Premium
+# 🍪 Cokies Bots
 
-Este projeto é a versão "super complexa e bonita" da página de links curtos para os bots Discord **Modi** e **Musicat**.
+Bem-vindo ao **Cokies Bots** - Um site profissional apresentando dois bots Discord incríveis: **Modi** e **Musicat**.
 
-## 🎨 Design
+## 📋 Sobre
 
-O design utiliza um tema **Cyberpunk/Dark Premium** com os seguintes elementos:
+Cokies Bots é um site 100% em HTML, CSS e JavaScript puro (sem frameworks) que apresenta dois bots Discord poderosos:
 
-*   **Fundo:** Padrão sutil de grade (grid) para um toque futurista.
-*   **Cores:** Ciano elétrico (`--color-primary`) e Magenta elétrico (`--color-secondary`) para um alto contraste e efeito de neon.
-*   **Efeitos:** Brilhos (glow), sombras complexas e animações sutis (como o `pulse` nos botões e a rotação de borda nos cartões) para dar profundidade e sofisticação.
-*   **Estrutura:** Layout centralizado e responsivo.
+- **Modi** - Bot de Moderação com filtros inteligentes e sistema premium
+- **Musicat** - Bot de Música com busca avançada no SoundCloud
 
-## 📁 Estrutura do Projeto
+## 🎯 Recursos Principais
+
+### 🌐 Website
+- Design profissional com tema avermelhado
+- Totalmente responsivo (mobile, tablet, desktop)
+- Navegação suave e intuitiva
+- Seções organizadas por funcionalidade
+
+### 🤖 Modi Bot
+- Configuração rápida do servidor
+- Filtros de moderação (Mídia, Texto, Links)
+- Auto-reações automáticas
+- Sistema Premium com limites expandidos
+- Gerenciamento de permissões
+
+### 🎵 Musicat Bot
+- Busca avançada no SoundCloud
+- Múltiplas estratégias de busca
+- Download de MP3 até 25MB
+- Detecção automática de versões (Slow, Speed, Remix, etc.)
+- Ordenação por popularidade
+
+### ⚡ Sistema de Atalhos
+- `/modi` - Redireciona para convite do Modi
+- `/musicat` - Redireciona para convite do Musicat
+- Atalhos de teclado (Ctrl+Shift+M, Ctrl+Shift+U)
+- Rastreamento de cliques e estatísticas
+
+## 🚀 Como Usar
+
+### Convidar Bots
+1. **Modi**: Clique em "Convidar Modi" ou use `/modi`
+2. **Musicat**: Clique em "Convidar Musicat" ou use `/musicat`
+
+### Atalhos de Teclado
+- `Ctrl+Shift+M` - Convidar Modi
+- `Ctrl+Shift+U` - Convidar Musicat
+- `Ctrl+Shift+H` - Ver ajuda
+
+### Console (DevTools)
+```javascript
+// Ver comandos disponíveis
+cokies.help()
+
+// Convidar bots
+cokies.invite.modi()
+cokies.invite.musicat()
+
+// Ver estatísticas
+cokies.stats()
+
+// Testar sistema
+testCokies()
+```
+
+## 📁 Estrutura de Arquivos
 
 ```
-sakibites_rebuild_v3/
-├── index.html       # Página inicial com o visual complexo
-├── style.css        # Estilos CSS com efeitos avançados
-├── CNAME            # Configuração do domínio (dev.sakibites.space)
-├── Modi/
-│   └── index.html   # Redirecionamento para o convite do Modi
-└── Musicat/
-    └── index.html   # Redirecionamento para o convite do Musicat
+cokieshub/
+├── index.html          # Página principal
+├── styles.css          # Estilos e tema
+├── script.js           # Funcionalidades e atalhos
+├── README.md           # Este arquivo
+└── CNAME               # Configuração de domínio
 ```
 
-## 🚀 Funcionalidade de Links Curtos
+## 🎨 Tema e Design
 
-A funcionalidade de links curtos foi mantida:
+- **Cor Primária**: Vermelho (#c41e3a)
+- **Cor Secundária**: Azul Escuro (#2c3e50)
+- **Cor de Destaque**: Vermelho Claro (#dc143c)
+- **Fonte**: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
 
-*   **Link Curto Modi:** `dev.sakibites.space/Modi` -> Redireciona para o convite do Modi.
-*   **Link Curto Musicat:** `dev.sakibites.space/Musicat` -> Redireciona para o convite do Musicat.
+## 🔧 Funcionalidades Técnicas
 
-## 🔗 Links de Convite (Incorporados nos Redirecionamentos)
+### Sistema de Encurtador de URLs
+- Armazena atalhos em localStorage
+- Rastreia número de cliques
+- Suporta criação dinâmica de atalhos
 
-*   **Modi:** `https://discord.com/oauth2/authorize?client_id=1424226592858701896&permissions=11264&integration_type=0&scope=bot`
-*   **Musicat:** `https://discord.com/oauth2/authorize?client_id=1430266604922601592&permissions=2147494912&integration_type=0&scope=bot+applications.commands`
+### Detecção de Comandos
+- Parâmetro URL: `?cmd=/modi` ou `?cmd=/musicat`
+- Atalhos de teclado globais
+- Suporte a console JavaScript
 
-## 📄 Licença
+### Animações
+- Entrada suave de elementos
+- Transições de hover
+- Efeitos de scroll suave
 
-Todos os direitos reservados © 2025 Sakibites.
+### Responsividade
+- Mobile-first design
+- Breakpoints: 768px e 480px
+- Grid layout adaptativo
+
+## 📊 Estatísticas
+
+O sistema rastreia:
+- Número de cliques em cada atalho
+- Data de criação dos atalhos
+- Histórico de uso
+
+## 🌍 Links dos Bots
+
+### Modi
+```
+https://discord.com/oauth2/authorize?client_id=1424226592858701896&permissions=11264&integration_type=0&scope=bot
+```
+
+### Musicat
+```
+https://discord.com/oauth2/authorize?client_id=1430266604922601592&permissions=2147494912&integration_type=0&scope=bot+applications.commands
+```
+
+## 💻 Compatibilidade
+
+- ✅ Chrome/Chromium
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Opera
+- ✅ Navegadores móveis
+
+## 🔐 Segurança
+
+- Sem dependências externas
+- Sem rastreamento de terceiros
+- Dados armazenados localmente apenas
+- HTTPS recomendado
+
+## 📝 Licença
+
+© 2024 Cokies Bots. Todos os direitos reservados.
+
+## 🤝 Suporte
+
+Para dúvidas ou sugestões:
+- Discord: [Servidor Cokies](https://discord.gg/cokies)
+- GitHub: [Repositório](https://github.com)
+
+## 🎉 Agradecimentos
+
+Desenvolvido com ❤️ para a comunidade Discord.
+
+---
+
+**Última atualização**: Outubro 2024
