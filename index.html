@@ -3,138 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakibites Bot Portfolio - Reconstruído</title>
+    <title>Sakibites Bots - Links Rápidos</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte Inter do Google Fonts (simulação de Tailwind CSS) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Ícones Font Awesome para simular os ícones do site original -->
+    <!-- Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Ícones Font Awesome para o Discord -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Barra de Navegação -->
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">SB Sakibites</a>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Discord</a>
-                <a href="#">Explorar Bots</a>
-            </nav>
+    <div class="main-container">
+        <h1>Sakibites Bots</h1>
+        <p class="subtitle">Seus links rápidos para convidar Modi e Musicat para o seu servidor Discord.</p>
+
+        <div class="bots-grid">
+            <!-- Card Modi -->
+            <div class="bot-card">
+                <span class="icon"><i class="fas fa-shield-alt"></i></span>
+                <h2>Modi</h2>
+                <p>O bot de moderação automática inteligente para manter seu servidor seguro e organizado.</p>
+                <a href="/Modi" class="btn">Convidar Modi</a>
+            </div>
+
+            <!-- Card Musicat -->
+            <div class="bot-card">
+                <span class="icon"><i class="fas fa-music"></i></span>
+                <h2>Musicat</h2>
+                <p>O DJ felino que traz música de alta qualidade para seus canais de voz.</p>
+                <a href="/Musicat" class="btn">Convidar Musicat</a>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <!-- Seção Hero -->
-        <section class="hero">
-            <div class="container">
-                <h1>Sakibites Bot Portfolio</h1>
-                <p>Explore os bots Discord mais incríveis da comunidade Sakibites. Moderação automática inteligente e reprodução de música de alta qualidade, tudo em um só lugar.</p>
-                <div class="actions">
-                    <a href="#" class="btn btn-primary">Explorar Bots</a>
-                    <a href="#" class="btn btn-secondary">Junte-se ao Discord</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Recursos (Features) -->
-        <section class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Moderação Inteligente</h3>
-                        <p>Modi oferece filtragem automática configurável para manter seus canais organizados e seguros.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon"><i class="fas fa-music"></i></div>
-                        <h3>Música de Qualidade</h3>
-                        <p>Musicat traz a melhor experiência de áudio para seus canais de voz, com suporte a múltiplas fontes.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon"><i class="fas fa-bolt"></i></div>
-                        <h3>Fácil de Usar</h3>
-                        <p>Slash Commands intuitivos e configuração simples para começar em segundos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Nossos Bots -->
-        <section class="bots">
-            <div class="container">
-                <h2>Nossos Bots</h2>
-                <div class="bots-grid">
-                    <!-- Card Modi -->
-                    <div class="bot-card">
-                        <!-- Imagem Placeholder: Usei um ícone de avatar genérico. O usuário precisará substituir. -->
-                        <img src="https://via.placeholder.com/80/6366f1/FFFFFF?text=M" alt="Avatar do Bot Modi">
-                        <div class="bot-card-content">
-                            <h3>Modi <i class="fas fa-check-circle" style="color: var(--color-success);"></i></h3>
-                            <span class="subtitle">Moderação Automática Inteligente para o seu Servidor Discord.</span>
-                            <p>Modi é um bot de moderação automática robusto, projetado para manter a ordem e o foco em seus canais do Discord. Utilizando o Firebase Realtime Database para configurações persistentes e por servidor, ele oferece um sistema de filtragem altamente configurável...</p>
-                            <ul>
-                                <li>Filtragem Automática de Mensagens (Mídia, Texto, Link, Regex)</li>
-                                <li>Mensagens de Aviso Temporárias para Usuários Infratores</li>
-                                <li>+3 funcionalidades</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card Musicat -->
-                    <div class="bot-card">
-                        <!-- Imagem Placeholder: Usei um ícone de avatar genérico. O usuário precisará substituir. -->
-                        <img src="https://via.placeholder.com/80/a78bfa/FFFFFF?text=C" alt="Avatar do Bot Musicat">
-                        <div class="bot-card-content">
-                            <h3>Musicat <i class="fas fa-check-circle" style="color: var(--color-success);"></i></h3>
-                            <span class="subtitle">O DJ Felino que Traz a Música Perfeita para o seu Canal de Voz.</span>
-                            <p>Musicat é um bot de música de alta qualidade, focado em fornecer uma experiência de áudio impecável no Discord. Construído com \`discord.py[voice]\` e \`yt-dlp\`, ele é capaz de reproduzir áudio de diversas fontes...</p>
-                            <ul>
-                                <li>Reprodução de Música de Alta Fidelidade</li>
-                                <li>Suporte a Múltiplas Fontes (YouTube, SoundCloud e mais via yt-dlp)</li>
-                                <li>+3 funcionalidades</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção CTA (Call to Action) -->
-        <section class="cta">
-            <div class="container">
-                <div class="cta-section">
-                    <h2>Pronto para Começar?</h2>
-                    <p>Adicione nossos bots ao seu servidor Discord e comece a aproveitar todas as funcionalidades incríveis agora mesmo.</p>
-                    <a href="#" class="btn btn-primary btn-cta">Junte-se ao Discord</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Sakibites</h4>
-                    <p>Portfólio dos bots Discord Modi e Musicat. Desenvolvidos com paixão e dedicação.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Links</h4>
-                    <a href="#">Discord Server</a>
-                    <a href="#">GitHub</a>
-                </div>
-                <div class="footer-column">
-                    <h4>Contato</h4>
-                    <a href="mailto:contato@sakibites.space">contato@sakibites.space</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Sakibites. Todos os direitos reservados. Desenvolvido com HTML, CSS e JS puros ❤️</p>
-            </div>
-        </div>
+        <p>Desenvolvido com ❤️ em HTML e CSS puros | Sakibites © 2025</p>
     </footer>
 </body>
 </html>
